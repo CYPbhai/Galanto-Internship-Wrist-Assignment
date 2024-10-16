@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void Hand_OnRight(object sender, EventArgs e)
     {
-        hand.SetSliderSlider(false);
+        hand.SetSlider(false);
         vegetableReference = Instantiate(vegetablePrefab, vegetablePosition, Quaternion.identity);
         vegetableChildren = vegetableReference.GetVegetableChildren();
         childIndex = 0;
@@ -51,10 +51,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // Check if we have reached the last child
+        // Check if we have reached the end
         if (childIndex == vegetableChildren.Length-1)
         {
-            hand.SetSliderSlider(true);
+            hand.SetSlider(true);
         }
 
     }

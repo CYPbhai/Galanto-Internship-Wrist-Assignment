@@ -18,10 +18,10 @@ public class Hand : MonoBehaviour
 
     private void Start()
     {
-        SetSliderSlider(false);
+        SetSlider(false);
     }
 
-    public void SetSliderSlider(bool active)
+    public void SetSlider(bool active)
     {
         slider.gameObject.SetActive(active);
     }
@@ -30,7 +30,7 @@ public class Hand : MonoBehaviour
     {
         AnimatorStateInfo currentState = animator.GetCurrentAnimatorStateInfo(0);
 
-        // Trigger animations based on input
+        // Trigger animations based on input and state
         if (!currentState.IsName("UpHandAnimation") && Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && currentState.IsName("DownHandAnimation"))
         {
             animator.SetTrigger("Up");
